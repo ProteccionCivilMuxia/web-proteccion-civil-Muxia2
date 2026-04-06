@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protección Civil de Muxía</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BARRA DE NAVEGACIÓN NEGRA -->
+<nav class="navbar">
+  <div class="nav-container">
+    <ul class="nav-menu">
+      <li><a href="Quensomos.html">Quen somos?</a></li>
+      <li><a href="Voluntario.html">Voluntarios</a></li>
+      <li><a href="#">Intervencións</a></li>
+      <li class="fechas">
+        <a href="#" class="fechasbtn">Fotos <span class="flecha">▼</span></a>
+        <ul class="fechas-content">
+          <li><a href="#">1992-2000</a></li>
+          <li><a href="#">2001-2005</a></li>
+          <li><a href="#">2006-2010</a></li>
+          <li><a href="#">2011-2015</a></li>
+          <li><a href="#">2016-2020</a></li>
+          <li><a href="#">2021-2025</a></li>
+          <li><a href="#">Actual</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Noticias</a></li>
+      <li><a href="Contacto.html">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- CABECERA: LOGO + TÍTULO JUNTOS -->
+<header class="header-principal">
+  <img src="logo.png" alt="Escudo Protección Civil" class="logo-titulo">
+  <h1>Protección Civil de Muxía</h1>
+</header>
+
+<!-- TEXTO DE INTRODUCCIÓN GRANDE Y CENTRADO -->
+<div class="intro-box">
+  <p>
+    Ante casos de grave risco, catástrofe pública ou emerxencias de todo tipo fan unha coordinación preventiva e operativa de persoas e bens para reducir ou evitar os danos.
+    A súa actuación baséase nos principios básicos de solidariedade, gratuidade das actuacións e participación libre, responsable e altruista.
+  </p>
+</div>
+
+<!-- SECCIÓN DE TARJETAS DE INFORMACIÓN -->
+<section class="info-container">
+  <div class="info-block card-112">
+    <h2 style="color: red;">112</h2>
+    <p>Número único de emerxencias. Chame de inmediato ante calquera risco.</p>
+    <img src="112.jpg" alt="112" class="img-mini"> <!-- Opcional: icono del 112 -->
+  </div>
+
+  <div class="info-block">
+    <h2 style="color: green;">Localización</h2>
+    <p>Rúa Virxe da Barca, 26<br>15124 Muxía - A Coruña</p>
+    <a href="https://google.com" target="_blank" class="enlace-mapa">
+      Ver no Mapa
+    </a>
+    <img src="google.maps.png" alt="maps" class="img-mapa">
+  </div>
+
+  <div class="info-block">
+    <h2 style="color: #333;">Horario</h2>
+    <p>Dispoñibles os 365 días do ano para a túa seguridade.</p>
+    <div class="horario-destacado">24/7</div>
+  </div>
+</section>
+
+<script>
+const botonFotos = document.querySelector('.fechasbtn');
+const menuFechas = document.querySelector('.fechas-content');
+const flecha = document.querySelector('.flecha');
+
+botonFotos.addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  menuFechas.classList.toggle('activo');
+  flecha.classList.toggle('rotar');
+});
+
+document.addEventListener('click', function(e) {
+  if (!menuFechas.contains(e.target) && !botonFotos.contains(e.target)) {
+    menuFechas.classList.remove('activo');
+    flecha.classList.remove('rotar');
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Contacto Protección Civil de Muxía</title>
+
+<style>
+body {
+  background-color: aliceblue;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h2{
+font-size: 60px;
+text-align: center;
+color: blue;
+}
+
+.numero{
+text-align: center; 
+font-size: 40px; 
+}
+/* CONTENEDOR */
+.redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* máis separación */
+  height: 40vh;
+}
+
+/* CADA BLOQUE (IMAXE + TEXTO) */
+.red {
+  text-align: center;
+}
+
+/* IMAXES */
+.red img {
+  width: 280px;  /* máis grandes */
+  height: 280px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+/* EFECTO HOVER */
+.red img:hover {
+  transform: scale(1.2);
+}
+
+/* TEXTO */
+.red p {
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+<h2>Redes</h2>
+<div class="redes">
+
+  <!-- INSTAGRAM -->
+  <div class="red">
+    <a href="https://www.instagram.com/" target="_blank">
+      <img src="instagram.png" alt="Instagram">
+    </a>
+    <p>proteccioncivildemuxia</p>
+  </div>
+
+  <!-- FACEBOOK -->
+  <div class="red">
+    <a href="https://www.facebook.com/" target="_blank">
+      <img src="facebook.png" alt="Facebook">
+    </a>
+    <p>AVPC PROTECCIÓN CIVIL MUXIA </p>
+  </div>
+
+  <!-- CORREO -->
+  <div class="red">
+      <img src="correo.png" alt="Correo">
+    </a>
+    <p>Este é o noso correo</p>
+    <p>pcmuxia@telelines.es</p>
+  </div>
+
+</div>
+<h2>Teléfono</h2>
+ <p class="numero">981 74 24 97 </p>
+ 
+ 
+</body>
+</html>

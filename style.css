@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(249, 175, 119); /* El naranja de tu imagen */
+  font-family: Arial, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- NAVBAR NEGRA --- */
+.navbar {
+  width: 100%;
+  background-color: #000000;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Alinea el menú a la derecha como en tu foto */
+  padding: 0 20px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu li {
+  position: relative; /* CLAVE: Para que el menú desplegable se ancle aquí */
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: #ff8c00;
+}
+
+/* --- MENÚ DESPLEGABLE (CORREGIDO ABAJO) --- */
+.fechas-content {
+  position: absolute;
+  top: 100%;       /* Justo debajo del botón Fotos */
+  left: 0;         /* Alineado al borde izquierdo del botón */
+  background-color: #000000;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1100;
+  border: 1px solid #333; /* Borde sutil para separar del fondo */
+}
+
+.fechas-content.activo {
+  max-height: 500px;
+  opacity: 1;
+  padding: 10px 0;
+}
+
+.fechas-content a {
+  padding: 12px 20px !important; /* Fuerza el espaciado */
+  font-size: 13px !important;
+  border-bottom: 1px solid #222;
+  width: 100%;
+  text-align: left;
+}
+
+.fechas-content a:hover {
+  background-color: #222;
+  color: #ff8c00 !important;
+}
+
+/* Flecha del menú */
+.flecha {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 10px;
+  margin-left: 5px;
+}
+.flecha.rotar { transform: rotate(180deg); }
+
+/* --- CABECERA: LOGO + TÍTULO --- */
+.header-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px 0 30px 0;
+  width: 100%;
+}
+
+.logo-titulo {
+  height: 90px;
+  width: auto;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* --- TEXTO INTRODUCCIÓN --- */
+.intro-box {
+  max-width: 1000px;
+  margin-bottom: 50px;
+  padding: 0 40px;
+}
+
+.intro-box p {
+  font-size: 26px;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #222;
+}
+
+/* --- TARJETAS CON BORDES NEGROS --- */
+.info-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  width: 95%;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.info-block {
+  flex: 1;
+  min-width: 320px;
+  background-color: #fffaf0; /* Color crema suave */
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  
+  /* BORDES NEGROS SOLICITADOS */
+  border: 2px solid #000000; 
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1); 
+  
+  transition: all 0.3s ease;
+}
+
+.info-block:hover {
+  transform: translateY(-8px);
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.info-block h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.info-block p {
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+  line-height: 1.4;
+}
+
+/* Imágenes dentro de tarjetas */
+.img-mapa {
+  width: 120px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+.horario-destacado {
+  font-size: 45px;
+  font-weight: 900;
+  color: #333;
+  margin-top: 10px;
+}
+
+.enlace-mapa {
+  color: #003399;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* --- RESPONSIVO PARA MÓVILES --- */
+@media (max-width: 850px) {
+  .header-principal { flex-direction: column; text-align: center; }
+  h1 { font-size: 2.5rem; }
+  .intro-box p { font-size: 20px; }
+  .nav-container { justify-content: center; }
+  .nav-menu { flex-wrap: wrap; justify-content: center; }
+}

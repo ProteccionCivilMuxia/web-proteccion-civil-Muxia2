@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia - Protección Civil de Muxía</title>
+    <style>
+        /* 1. Línea decorativa superior con los colores de Protección Civil */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, #ff8c00 50%, #003399 50%);
+            z-index: 1000;
+        }
+
+        body {
+            /* Un fondo con textura suave tipo papel antiguo */
+            background-color: #fdf5e6;
+            background-image: radial-gradient(#eadbc8 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            margin: 0;
+            padding: 60px 20px; /* Más espacio arriba para la línea */
+            display: flex;
+            justify-content: center;
+        }
+
+        .historia-container {
+            background: #ffffff;
+            max-width: 750px;
+            padding: 50px;
+            border-radius: 4px;
+            /* Sombra elegante que parece papel sobre la mesa */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid #ff8c00; /* Refuerzo del color naranja */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #003399; /* Azul institucional */
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        /* Resaltado de fechas y nombres */
+        .resaltado {
+            font-weight: bold;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="historia-container">
+        <h1>Historia</h1>
+        
+        <p>A agrupación local de Protección Civil de Muxía leva traballando no municipio desde <span class="resaltado">1992</span>.</p>
+        
+        <p>O <span class="resaltado">26/10/1992</span> desapareceu a gamela Gallina Blanca con 2 tripulantes (Polito e Abel, pai e fillo a bordo). Durante días, os barcos de Muxía non saíron a faenar para buscar os cadáveres.</p>
+        
+        <p>O <span class="resaltado">6/11/1992</span> os buzos atoparon a gamela.</p> 
+        
+        <p>O día <span class="resaltado">10/11/1992</span> apareceu o corpo de Polito na Praia do Lago. Foron moitas as persoas que viñeron a Muxía para colaborar na súa busca.</p> 
+        
+        <p>O actual presidente, <strong>Ramón Pérez Barrientos</strong>, daquela era policía municipal e coñecía xente de agrupacións de Protección Civil doutras localidades. Vendo a resposta da veciñanza decidiu facer unha reunión para crear a Agrupación en Muxía.</p>
+    </div>
+
+</body>
+</html>

@@ -15,31 +15,34 @@
       <li><a href="Quensomos.html">Quen somos?</a></li>
       <li><a href="Voluntario.html">Voluntarios</a></li>
       <li><a href="#">Intervencións</a></li>
+      
+      <!-- MENÚ DE FOTOS CORREGIDO -->
       <li class="fechas">
         <a href="#" class="fechasbtn">Fotos <span class="flecha">▼</span></a>
         <ul class="fechas-content">
-          <li><a href="#">1992-2000</a></li>
+          <li><a href="foto1.html">1992-2000</a></li>
           <li><a href="foto2.html">2001-2005</a></li>
-          <li><a href="#">2006-2010</a></li>
-          <li><a href="#">2011-2015</a></li>
-          <li><a href="#">2016-2020</a></li>
-          <li><a href="#">2021-2025</a></li>
-          <li><a href="#">Actual</a></li>
+          <li><a href="foto3.html">2006-2010</a></li>
+          <li><a href="foto4.html">2011-2015</a></li>
+          <li><a href="foto5.html">2016-2020</a></li>
+          <li><a href="foto6.html">2021-2025</a></li>
+          <li><a href="foto7.html">Actual</a></li>
         </ul>
       </li>
+      
       <li><a href="#">Noticias</a></li>
       <li><a href="Contacto.html">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- CABECERA: LOGO + TÍTULO JUNTOS -->
+<!-- CABECERA: LOGO + TÍTULO -->
 <header class="header-principal">
   <img src="logo.png" alt="Escudo Protección Civil" class="logo-titulo">
   <h1>Protección Civil de Muxía</h1>
 </header>
 
-<!-- TEXTO DE INTRODUCCIÓN GRANDE Y CENTRADO -->
+<!-- TEXTO DE INTRODUCCIÓN COMPLETO -->
 <div class="intro-box">
   <p>
     Ante casos de grave risco, catástrofe pública ou emerxencias de todo tipo fan unha coordinación preventiva e operativa de persoas e bens para reducir ou evitar os danos.
@@ -47,12 +50,12 @@
   </p>
 </div>
 
-<!-- SECCIÓN DE TARJETAS DE INFORMACIÓN -->
+<!-- SECCIÓN DE TARJETAS DE INFORMACIÓN COMPLETA -->
 <section class="info-container">
   <div class="info-block card-112">
     <h2 style="color: red;">112</h2>
     <p>Número único de emerxencias. Chame de inmediato ante calquera risco.</p>
-    <img src="112.jpg" alt="112" class="img-mini"> <!-- Opcional: icono del 112 -->
+    <img src="112.jpg" alt="112" class="img-mini" style="width: 60px; margin-top: 10px;"> 
   </div>
 
   <div class="info-block">
@@ -71,24 +74,17 @@
   </div>
 </section>
 
+<!-- SCRIPT SOLO PARA MÓVILES -->
 <script>
-const botonFotos = document.querySelector('.fechasbtn');
-const menuFechas = document.querySelector('.fechas-content');
-const flecha = document.querySelector('.flecha');
-
-botonFotos.addEventListener('click', function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  menuFechas.classList.toggle('activo');
-  flecha.classList.toggle('rotar');
-});
-
-document.addEventListener('click', function(e) {
-  if (!menuFechas.contains(e.target) && !botonFotos.contains(e.target)) {
-    menuFechas.classList.remove('activo');
-    flecha.classList.remove('rotar');
-  }
-});
+  // En ordenadores el menú funciona solo con el CSS (hover)
+  // Este script permite que en móviles se abra al tocar "Fotos"
+  const botonFotos = document.querySelector('.fechas');
+  botonFotos.addEventListener('click', function(e) {
+    if (window.innerWidth < 850) {
+      // No cancelamos el evento para que los enlaces internos funcionen
+      this.classList.toggle('activo-movil');
+    }
+  });
 </script>
 
 </body>

@@ -1,3 +1,4 @@
+/* --- RESET GENERAL --- */
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(249, 175, 119); /* El naranja de tu imagen */
+  background-color: rgb(249, 175, 119); /* Naranja de tu imagen */
   font-family: Arial, sans-serif;
   width: 100%;
   overflow-x: hidden;
@@ -21,14 +22,14 @@ body {
   padding: 10px 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 2000; /* Asegura que esté por encima de todo */
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: center; /* Alinea el menú a la derecha como en tu foto */
+  justify-content: center;
   padding: 0 20px;
 }
 
@@ -39,7 +40,7 @@ body {
 }
 
 .nav-menu li {
-  position: relative; /* CLAVE: Para que el menú desplegable se ancle aquí */
+  position: relative;
 }
 
 .nav-menu li a {
@@ -55,35 +56,43 @@ body {
   color: #ff8c00;
 }
 
-/* --- MENÚ DESPLEGABLE (CORREGIDO ABAJO) --- */
+/* --- MENÚ DESPLEGABLE (CORREGIDO PARA HOVER) --- */
 .fechas-content {
   position: absolute;
-  top: 100%;       /* Justo debajo del botón Fotos */
-  left: 0;         /* Alineado al borde izquierdo del botón */
+  top: 100%;
+  left: 0;
   background-color: #000000;
-  min-width: 160px;
+  min-width: 180px;
   display: flex;
   flex-direction: column;
+  
+  /* Estado oculto */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
+  visibility: hidden;
+  
   transition: all 0.3s ease;
-  z-index: 1100;
-  border: 1px solid #333; /* Borde sutil para separar del fondo */
+  z-index: 2100;
+  border: 1px solid #333;
 }
 
-.fechas-content.activo {
+/* Mostrar al pasar el ratón */
+.fechas:hover .fechas-content,
+.fechas.activo-movil .fechas-content {
   max-height: 500px;
   opacity: 1;
+  visibility: visible;
   padding: 10px 0;
 }
 
 .fechas-content a {
-  padding: 12px 20px !important; /* Fuerza el espaciado */
+  padding: 12px 20px !important;
   font-size: 13px !important;
   border-bottom: 1px solid #222;
   width: 100%;
   text-align: left;
+  display: block !important; /* Clave para que el enlace sea clicable */
 }
 
 .fechas-content a:hover {
@@ -91,14 +100,16 @@ body {
   color: #ff8c00 !important;
 }
 
-/* Flecha del menú */
+/* Flecha y rotación */
 .flecha {
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 10px;
   margin-left: 5px;
 }
-.flecha.rotar { transform: rotate(180deg); }
+.fechas:hover .flecha {
+  transform: rotate(180deg);
+}
 
 /* --- CABECERA: LOGO + TÍTULO --- */
 .header-principal {
@@ -152,15 +163,12 @@ h1 {
 .info-block {
   flex: 1;
   min-width: 320px;
-  background-color: #fffaf0; /* Color crema suave */
+  background-color: #fffaf0; /* Crema suave */
   padding: 40px;
   border-radius: 20px;
   text-align: center;
-  
-  /* BORDES NEGROS SOLICITADOS */
   border: 2px solid #000000; 
   box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1); 
-  
   transition: all 0.3s ease;
 }
 
@@ -176,13 +184,11 @@ h1 {
 
 .info-block p {
   font-size: 18px;
-  text-align: center;
   margin: 10px 0;
-  width: 100%;
   line-height: 1.4;
 }
 
-/* Imágenes dentro de tarjetas */
+/* Imágenes y elementos destacados */
 .img-mapa {
   width: 120px;
   margin: 20px auto 0;
@@ -202,11 +208,10 @@ h1 {
   text-decoration: underline;
 }
 
-/* --- RESPONSIVO PARA MÓVILES --- */
+/* --- RESPONSIVO --- */
 @media (max-width: 850px) {
   .header-principal { flex-direction: column; text-align: center; }
   h1 { font-size: 2.5rem; }
   .intro-box p { font-size: 20px; }
-  .nav-container { justify-content: center; }
   .nav-menu { flex-wrap: wrap; justify-content: center; }
 }

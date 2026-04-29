@@ -57,7 +57,6 @@ body {
 
 /* --- MENÚ DESPLEGABLE (CORREGIDO ABAJO) --- */
 .fechas-content {
-  position: absolute;
   top: 100%;
   left: 0;
   background-color: #000000;
@@ -71,7 +70,9 @@ body {
   z-index: 1100;
   border: 1px solid #333;
 }
-
+.fechas {
+  position: relative;
+}
 .fechas-content.activo {
   max-height: 600px;
   opacity: 1;

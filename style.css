@@ -56,7 +56,7 @@ body {
 }
 
 /* --- MENÚ DESPLEGABLE (CORREGIDO ABAJO) --- */
-..fechas-content {
+.fechas-content {
   position: absolute;
   top: 100%;
   left: 0;

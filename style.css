@@ -56,10 +56,10 @@ body {
 }
 
 /* --- MENÚ DESPLEGABLE (CORREGIDO ABAJO) --- */
-.fechas-content {
+..fechas-content {
   position: absolute;
-  top: 100%;       /* Justo debajo del botón Fotos */
-  left: 0;         /* Alineado al borde izquierdo del botón */
+  top: 100%;
+  left: 0;
   background-color: #000000;
   min-width: 160px;
   display: flex;
@@ -69,11 +69,11 @@ body {
   opacity: 0;
   transition: all 0.3s ease;
   z-index: 1100;
-  border: 1px solid #333; /* Borde sutil para separar del fondo */
+  border: 1px solid #333;
 }
 
-.fechas-content.activo {
-  max-height: 500px;
+.fechas:hover .fechas-content {
+  max-height: 600px;
   opacity: 1;
   padding: 10px 0;
 }

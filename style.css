@@ -72,18 +72,20 @@ body {
   border: 1px solid #333;
 }
 
-.fechas:hover .fechas-content {
+.fechas-content.activo {
   max-height: 600px;
   opacity: 1;
   padding: 10px 0;
 }
 
 .fechas-content a {
-  padding: 12px 20px !important; /* Fuerza el espaciado */
+  padding: 12px 20px !important;
   font-size: 13px !important;
   border-bottom: 1px solid #222;
   width: 100%;
   text-align: left;
+  color: white;
+  text-decoration: none;
 }
 
 .fechas-content a:hover {

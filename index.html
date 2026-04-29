@@ -75,15 +75,15 @@
 
 <!-- SCRIPT SOLO PARA MÓVILES -->
 <script>
-  // En ordenadores el menú funciona solo con el CSS (hover)
-  // Este script permite que en móviles se abra al tocar "Fotos"
-  const botonFotos = document.querySelector('.fechas');
+const botonFotos = document.querySelector('.fechasbtn');
+const menuFechas = document.querySelector('.fechas-content');
+
+if (botonFotos && menuFechas) {
   botonFotos.addEventListener('click', function(e) {
-    if (window.innerWidth < 850) {
-      // No cancelamos el evento para que los enlaces internos funcionen
-      this.classList.toggle('activo-movil');
-    }
+    e.preventDefault();
+    menuFechas.classList.toggle('activo');
   });
+}
 </script>
 
 </body>

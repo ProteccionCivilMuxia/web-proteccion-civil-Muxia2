@@ -6,45 +6,73 @@
 
 <style>
 body{
-background-color: rgb(249,175,119);
-font-family: Arial, sans-serif;
-margin:0;
+  background-color: rgb(249,175,119);
+  font-family: Arial, sans-serif;
+  margin:0;
 }
 
 /* TITULO PRINCIPAL */
 .titulo{
-text-align:center;
-font-size:40px;
-margin:30px 0;
+  text-align:center;
+  font-size:40px;
+  margin:30px 0;
 }
 
 /* TITULO AÑO */
 .titulo-ano{
-font-size:28px;
-margin:40px 0 20px 40px;
-font-weight:bold;
+  font-size:28px;
+  margin:40px 0 20px 40px;
+  font-weight:bold;
 }
 
 /* GALERIA */
 .galeria{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-padding:0 40px 40px 40px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  padding:0 40px 40px 40px;
 }
 
 .galeria img{
-width:280px;
-height:180px;
-object-fit:cover;
-border-radius:10px;
-border:2px solid black;
-box-shadow:5px 5px 0px rgba(0,0,0,0.15);
-transition:0.3s;
+  width:280px;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid black;
+  box-shadow:5px 5px 0px rgba(0,0,0,0.15);
+  transition:0.3s;
+  cursor:pointer;
 }
 
 .galeria img:hover{
-transform:scale(1.05);
+  transform:scale(1.05);
+}
+
+/* ---------------- LIGHTBOX ---------------- */
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+
+  display:none;
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  border:3px solid white;
+}
+
+.lightbox.activo{
+  display:flex;
 }
 </style>
 </head>
@@ -56,18 +84,42 @@ transform:scale(1.05);
 <h2 class="titulo-ano">2002-2003</h2>
 
 <div class="galeria">
-<img src="foto1.png" alt="foto 1">
-<img src="foto2.png" alt="foto 2">
-<img src="foto3.png" alt="foto 4">
-<img src="foto4.png" alt="foto 5">
-<img src="foto5.png" alt="foto 6">
-<img src="foto6.png" alt="foto 7">
-<img src="foto7.png" alt="foto 8">
-<img src="foto8.png" alt="foto 9">
-<img src="foto9.png" alt="foto 0">
-<img src="foto10.png" alt="foto 10">
-<img src="foto11.png" alt="foto 11">
+<img src="foto1.png">
+<img src="foto2.png">
+<img src="foto3.png">
+<img src="foto4.png">
+<img src="foto5.png">
+<img src="foto6.png">
+<img src="foto7.png">
+<img src="foto8.png">
+<img src="foto9.png">
+<img src="foto10.png">
+<img src="foto11.png">
 </div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img id="imgGrande" src="">
+</div>
+
+<script>
+const imagenes = document.querySelectorAll('.galeria img');
+const lightbox = document.getElementById('lightbox');
+const imgGrande = document.getElementById('imgGrande');
+
+// abrir imagen
+imagenes.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.classList.add('activo');
+    imgGrande.src = img.src;
+  });
+});
+
+// cerrar al hacer click fuera
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('activo');
+});
+</script>
 
 </body>
 </html>
